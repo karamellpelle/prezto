@@ -48,6 +48,7 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 # Git
 #
 
+    zstyle ':prezto:module:git:log:context' format ''
 # Ignore submodules when they are 'dirty', 'untracked', 'all', or 'none'.
 # zstyle ':prezto:module:git:status:ignore' submodules 'all'
 
@@ -76,7 +77,7 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 #
 
 # Set the Pacman frontend.
-# zstyle ':prezto:module:pacman' frontend 'yaourt'
+zstyle ':prezto:module:pacman' frontend 'yaourt'
 
 #
 # Prompt
