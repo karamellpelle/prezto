@@ -12,3 +12,8 @@ fi
 
 ## Customize to your needs...
 #
+
+# use NeoVim by default
+if [ -x "$(command -v nvim)" ]; then
+  alias vim=nvim
+fi
