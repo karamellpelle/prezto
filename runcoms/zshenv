@@ -20,5 +20,5 @@ export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='vimpager'
 
-# FIXME: less if not present
-PAGER=vimpager
+# override OS X vim
+alias vim='/usr/local/bin/vim'
