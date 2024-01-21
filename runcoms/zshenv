@@ -18,4 +18,8 @@ fi
 EDITOR=(vim)
 path=($path ~/.local/bin ~/source/git-hg/bin)
 
+export EDITOR='vim'
+export VISUAL='vim'
+export PAGER='vimpager'
+
 PAGER=vimpager
