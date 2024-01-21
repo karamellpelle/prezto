@@ -25,7 +25,6 @@ if [ -x "$(command -v vimpager)" ]; then
   export PAGER='vimpager'
 fi
 
-
 #
 # Language
 #
@@ -53,6 +52,14 @@ path=(
   /usr/local/{,s}bin(N)
   $path
 )
+
+# if we have ghcup installed, add executables
+if [[ -n "$GHCUP_INSTALL_BASE_PREFIX" ]]; then
+  path=(
+    /c/ghcup/bin
+    $path
+  )
+fi
 
 #
 # Less
