@@ -57,6 +57,7 @@ path=(
 if [[ -n "$GHCUP_INSTALL_BASE_PREFIX" ]]; then
   path=(
     /c/ghcup/bin
+    "$APPDATA/local/bin"
     $path
   )
 fi
