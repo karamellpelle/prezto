@@ -9,16 +9,3 @@
 if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
-
-
-################################################################################
-# custom
-
-#typeset -U path
-
-export EDITOR='vim'
-export VISUAL='vim'
-export PAGER='vimpager'
-
-# override OS X vim
-alias vim='/usr/local/bin/vim'
