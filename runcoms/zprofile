@@ -17,9 +17,13 @@ fi
 # Editors
 #
 
-export EDITOR='nvim'
-export VISUAL='nvim'
-export PAGER='vimpager'
+export EDITOR='vim'
+export VISUAL='vim'
+
+# use vimpager instead of less, if present
+if [ -x "$(command -v vimpager)" ]; then
+  export PAGER='vimpager'
+fi
 
 
 #
@@ -47,7 +51,6 @@ path=(
   $HOME/{,s}bin(N)
   /opt/{homebrew,local}/{,s}bin(N)
   /usr/local/{,s}bin(N)
-  ~/.local/bin
   $path
 )
 
