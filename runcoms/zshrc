@@ -14,23 +14,9 @@ fi
 ## Customize to your needs...
 #
 
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-bindkey -v
-setopt hist_ignore_all_dups
-setopt hist_ignore_space
-# End of lines configured by zsh-newuser-install
 
-
-alias ls='ls --color=auto'
-
-autoload -U compinit promptinit
-compinit
-promptinit
-
-prompt walters
-
-setopt completealiases
+# use NeoVim by default
+if [ -x "$(command -v nvim)" ]; then
+  alias vim=nvim
+fi
 
