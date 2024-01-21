@@ -10,16 +10,15 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
+
 ################################################################################
 # custom
 
 #typeset -U path
 
-EDITOR=(vim)
-path=($path ~/.local/bin ~/source/git-hg/bin)
-
 export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='vimpager'
 
+# FIXME: less if not present
 PAGER=vimpager
