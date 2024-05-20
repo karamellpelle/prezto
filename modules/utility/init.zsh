@@ -126,6 +126,7 @@ alias lu='lt -u'         # Lists sorted by date, most recent last, shows access 
 if [[ ${(@M)${(f)"$(ls --version 2>&1)"}:#*GNU *} ]]; then
   alias lx='ll -XB'      # Lists sorted by extension (GNU only).
 fi
+alias sl='ls'            # I often screw this up.
 
 # Grep
 if zstyle -t ':prezto:module:utility:grep' color; then

@@ -20,3 +20,4 @@ if [ -x "$(command -v nvim)" ]; then
   alias vim=nvim
 fi
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
