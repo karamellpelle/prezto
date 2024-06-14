@@ -4,6 +4,8 @@
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
+# this file is not sourced by window managers like GDM, so 
+# interactive terminal user settings should be put in zshrc instead
 
 #
 # Browser
@@ -16,10 +18,15 @@ fi
 #
 # Editors
 #
-
-export EDITOR='nvim'
-export VISUAL='nvim'
-#export PAGER='vimpager'
+if [[ -z "$EDITOR" ]]; then
+  export EDITOR='nano'
+fi
+if [[ -z "$VISUAL" ]]; then
+  export VISUAL='nano'
+fi
+if [[ -z "$PAGER" ]]; then
+  export PAGER='less'
+fi
 
 #
 # Language
@@ -43,22 +50,10 @@ typeset -gU cdpath fpath mailpath path
 
 # Set the list of directories that Zsh searches for programs.
 path=(
-  $HOME/{,s}bin(N)
   /opt/{homebrew,local}/{,s}bin(N)
   /usr/local/{,s}bin(N)
-  ~/.local/bin
-  ~/.local/nvim-macos/bin
   $path
 )
-
-# if we have ghcup installed, add executables
-if [[ -n "$GHCUP_INSTALL_BASE_PREFIX" ]]; then
-  path=(
-    /c/ghcup/bin
-    "$APPDATA/local/bin"
-    $path
-  )
-fi
 
 #
 # Less

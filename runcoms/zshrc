@@ -14,10 +14,32 @@ fi
 ## Customize to your needs...
 #
 
+path=(
+  $HOME/.local/bin
+  $HOME/.local/nvim-macos/bin
+  $HOME/{,s}bin(N)
+  $path
+)
+
+# if we have ghcup installed, add executables
+if [[ -n "$GHCUP_INSTALL_BASE_PREFIX" ]]; then
+  path=(
+    /c/ghcup/bin
+    "$APPDATA/local/bin"
+    $path
+  )
+fi
+
+# Ensure path arrays do not contain duplicates.
+typeset -gU cdpath fpath mailpath path
 
 # use NeoVim by default
 if [ -x "$(command -v nvim)" ]; then
   alias vim=nvim
 fi
 
+export EDITOR='vim'
+export VISUAL='vim'
+
+# read fzf zsh settings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
