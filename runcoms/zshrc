@@ -33,6 +33,11 @@ fi
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path
 
+# this is for WSL. TODO: can it be removed on newer systems?
+if [ -f "/mnt/c/Program Files/OpenSSH/ssh-sk-helper.exe" ]; then
+  export SSH_SK_HELPER="/mnt/c/Program Files/OpenSSH/ssh-sk-helper.exe"
+fi
+
 # use NeoVim by default
 if [ -x "$(command -v nvim)" ]; then
   alias vim=nvim
